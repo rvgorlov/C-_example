@@ -4,7 +4,7 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-	unsigned int size = 1;
+	unsigned int size = 0;
 	
 	// Ввод числа с проверкой
 	std::ios::iostate state;
@@ -21,6 +21,8 @@ int main(int argc, char **argv)
 			}
 		} else {
 			std::cout << "Error" << std::endl;
+			std::cin.clear(std::ios::goodbit);
+			std::cin.ignore(65535, '\n');
 		}
 		size = temp;
 	} while (state != std::ios::goodbit);
