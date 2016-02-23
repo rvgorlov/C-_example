@@ -2,15 +2,18 @@
 
 using namespace std;
 
-int main(int argc, char **argv)
+class inputUnsInt
 {
-	unsigned int size = 0;
+public:
+	inputUnsInt();
+	~inputUnsInt();
 	
-	// Ввод числа с проверкой
+	static unsigned int inputUnsIntCheck () {
+	unsigned int size = 0;
 	std::ios::iostate state;
     do {
 		int temp; 
-        std::cout << "Input a number" << std::endl;
+        std::cout << "Введите N" << std::endl;
         std::cin >> temp;
         if (temp >= 0) {
 			state = std::cin.rdstate();
@@ -27,6 +30,13 @@ int main(int argc, char **argv)
 		size = temp;
 	} while (state != std::ios::goodbit);
     std::cout << "Вы ввели: " << size << endl;
+    return size; 
+	};	
+};
+
+int main(int argc, char **argv)
+{
+	unsigned int size = inputUnsInt::inputUnsIntCheck();
 	
 	// Выделяем память под массив 
 	// произвольного размера
