@@ -8,7 +8,7 @@ public:
 	inputUnsInt();
 	~inputUnsInt();
 	
-	static unsigned int inputUnsIntCheck () {
+	static int inputUnsIntCheck () {
 	unsigned int size = 0;
 	std::ios::iostate state;
     do {
@@ -30,7 +30,7 @@ public:
 		size = temp;
 	} while (state != std::ios::goodbit);
     std::cout << "Вы ввели: " << size << endl;
-    return size; 
+    return (int) size; 
 	};	
 };
 
